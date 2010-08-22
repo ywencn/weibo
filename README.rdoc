@@ -24,7 +24,7 @@ This gem was made in the process of creating {{叽叽喳喳.de}[http://jjzz.de],
 * Send me a pull request. Bonus points for topic branches.
 
 == Sites using the Weibo gem
-* {{叽叽喳喳.de}[http://jjzz.de]
+* {叽叽喳喳.de}[http://jjzz.de]
 
 (Please let me know if your site is using the gem so I can list you here)
 
