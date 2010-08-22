@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{weibo}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Ballantyne"]
-  s.date = %q{2010-08-20}
+  s.date = %q{2010-08-22}
   s.description = %q{this gem is an adaptation of John Nunemaker's Twitter gem.  I modified it to make api integration for 新浪微博 (t.sina.com.cn) easier.}
   s.email = %q{scott@ekohe.com}
   s.extra_rdoc_files = [
@@ -23,6 +23,10 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "example/example.rb",
+     "example/views/index.haml",
+     "example/views/layout.haml",
+     "example/views/screen.sass",
      "lib/weibo.rb",
      "lib/weibo/base.rb",
      "lib/weibo/config.rb",
@@ -50,11 +54,23 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_runtime_dependency(%q<forwardable>, [">= 0"])
+      s.add_runtime_dependency(%q<oauth>, ["~> 0.4.1"])
+      s.add_runtime_dependency(%q<hashie>, [">= 0"])
+      s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_dependency(%q<forwardable>, [">= 0"])
+      s.add_dependency(%q<oauth>, ["~> 0.4.1"])
+      s.add_dependency(%q<hashie>, [">= 0"])
+      s.add_dependency(%q<httparty>, [">= 0.5.2"])
     end
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+    s.add_dependency(%q<forwardable>, [">= 0"])
+    s.add_dependency(%q<oauth>, ["~> 0.4.1"])
+    s.add_dependency(%q<hashie>, [">= 0"])
+    s.add_dependency(%q<httparty>, [">= 0.5.2"])
   end
 end
 
