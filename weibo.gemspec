@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Scott Ballantyne"]
   s.date = %q{2010-08-22}
   s.description = %q{this gem is an adaptation of John Nunemaker's Twitter gem.  I modified it to make api integration for 新浪微博 (t.sina.com.cn) easier.}
-  s.email = %q{scott@ekohe.com}
+  s.email = %q{ussballantyne@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
