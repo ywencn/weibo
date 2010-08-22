@@ -22,6 +22,10 @@ This gem was made in the process of creating {叽叽喳喳.de}[http://jjzz.de], 
 
 (Please let me know if your site is using the gem so I can list you here)
 
+== Contributors
+* {Feixiong Li}[http://github.com/feixionglee]
+* {Aaron Qian}[http://github.com/aq1018]
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
