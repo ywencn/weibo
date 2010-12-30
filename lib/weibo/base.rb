@@ -268,6 +268,11 @@ module Weibo
       perform_get('/help/test.json')
     end
 
+		# Trends/daily
+		def trends_daily(query={})
+      perform_get("/trends/daily.json", :query => query)
+		end
+
   protected
     def self.mime_type(file)
       case
