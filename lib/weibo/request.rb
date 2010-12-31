@@ -23,7 +23,7 @@ module Weibo
 
     def initialize(client, method, path, options={})
       @client, @method, @path, @options = client, method, path, {:mash => true, :query => {:source => Weibo::Config.api_key}}.merge(options)
-      puts @options.inspect
+      # puts @options.inspect
     end
 
 
