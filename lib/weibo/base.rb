@@ -268,20 +268,20 @@ module Weibo
       perform_get('/help/test.json')
     end
 
-	# Trends/hourly
-	def trends_hourly(query={})
+  	# Trends/hourly
+  	def trends_hourly(query={})
       perform_get("/trends/hourly.json", :query => query)
-	end
+  	end
 
-	# Trends/daily
-	def trends_daily(query={})
+  	# Trends/daily
+  	def trends_daily(query={})
       perform_get("/trends/daily.json", :query => query)
-	end
+  	end
 
-	# Trends/weekly
-	def trends_weekly(query={})
+  	# Trends/weekly
+  	def trends_weekly(query={})
       perform_get("/trends/weekly.json", :query => query)
-	end
+  	end
 
   protected
     def self.mime_type(file)
