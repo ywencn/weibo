@@ -19,6 +19,7 @@ This gem was made in the process of creating {叽叽喳喳.de}[http://jjzz.de], 
 
 == Sites using the Weibo gem
 * {叽叽喳喳.de}[http://jjzz.de]
+* {http://weibopi.com/}[http://weibopi.com/]
 
 (Please let me know if your site is using the gem so I can list you here)
 
