@@ -1,5 +1,4 @@
 # This hack is used for Weibo upload
-# as Sina Weibo doesn't follow the god damned OAuth specifications!!!
 
 unless {}.respond_to?(:stringify_keys)
   class Hash
