@@ -108,7 +108,7 @@ module Weibo
       perform_get('/statuses/unread.json')
     end
     
-    # statuses/reset_count  清空消息提醒
+    # statuses/reset_count  未读消息数清零
     def reset_count(query={})
       perform_get('/statuses/reset_count.json', :query => query)
     end
@@ -121,7 +121,7 @@ module Weibo
       perform_get('/statuses/comments_by_me.json', :query => query)
     end
 
-		# statuses/comments_to_me 当前用户收到的评论
+		# statuses/comments_to_me  当前用户收到的评论
     def comments_to_me(query={})
       perform_get('/statuses/comments_to_me.json', :query => query)
     end
