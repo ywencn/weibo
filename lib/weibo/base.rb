@@ -107,6 +107,11 @@ module Weibo
     def unread
       perform_get('/statuses/unread.json')
     end
+    
+    # statuses/reset_count  清空消息提醒
+    def reset_count(query={})
+      perform_get('/statuses/reset_count.json', :query => query)
+    end
 
     def comments_timeline(query={})
       perform_get('/statuses/comments_timeline.json', :query => query)
@@ -116,6 +121,11 @@ module Weibo
       perform_get('/statuses/comments_by_me.json', :query => query)
     end
 
+		# statuses/comments_to_me 当前用户收到的评论
+    def comments_to_me(query={})
+      perform_get('/statuses/comments_to_me.json', :query => query)
+    end
+		
     def comments(query={})
       perform_get('/statuses/comments.json', :query => query)
     end
