@@ -293,6 +293,32 @@ module Weibo
       perform_get("/trends/weekly.json", :query => query)
   	end
 
+		# Tags
+		def tags(query={})
+			perform_get("/tags.json", :query => query)
+		end
+
+		# Tags/create
+		# params: tags should be a string split with ","
+		def tags_create(tags)
+			perform_post("/tags/create.json", :body => {:tags => tags})
+		end
+		
+		# Tags/suggestions
+		def tags_suggestions(query={})
+			perform_get("/tags/suggestions.json", :query => query)
+		end
+
+		# Tags/destroy
+		def tags_destroy(tag_id)
+			perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
+		end
+
+		# Tags/destroy_batch
+		def tags_destroy_batch(ids)
+			perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
+		end
+
   protected
     def self.mime_type(file)
       case
