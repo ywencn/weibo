@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Ballantyne"]
-  s.date = %q{2010-12-31}
+  s.date = %q{2011-01-11}
   s.description = %q{this gem is an adaptation of John Nunemaker's Twitter gem.  I modified it to make api integration for 新浪微博 (t.sina.com.cn) easier.}
   s.email = %q{ussballantyne@gmail.com}
   s.extra_rdoc_files = [
