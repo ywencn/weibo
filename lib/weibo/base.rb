@@ -292,6 +292,11 @@ module Weibo
   	def trends_weekly(query={})
       perform_get("/trends/weekly.json", :query => query)
   	end
+	
+	# Trends/statuses
+  	def trends_statuses(query={})
+      perform_get("/trends/statuses.json", :query => query)
+  	end
 
 		# Tags
 		def tags(query={})
