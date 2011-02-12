@@ -294,8 +294,8 @@ module Weibo
   	end
 	
 	# Trends/statuses
-  	def trends_statuses(query={})
-      perform_get("/trends/statuses.json", :query => query)
+  	def trends_statuses(trend_name)
+      perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
   	end
 
 		# Tags
