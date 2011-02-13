@@ -303,6 +303,11 @@ module Weibo
   	  perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
   	end
 	
+  	#Trends/destroy
+  	def trends_destroy(trend_id)
+  	  perform_delete("/trends/destroy.json", :query => {:trend_id => trend_id})
+  	end
+	
 		# Tags
 		def tags(query={})
 			perform_get("/tags.json", :query => query)
