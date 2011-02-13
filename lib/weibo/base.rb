@@ -300,9 +300,13 @@ module Weibo
 	
 	#Trends/follow
 	def trends_follow(trend_name)
-	perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
+	  perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
 	end
 	
+	#Trends/follow
+	def trends_destroy(trend_id)
+	  perform_delete("/trends/destroy.json", :query => {:trend_id => trend_id})
+	end
 
 		# Tags
 		def tags(query={})
