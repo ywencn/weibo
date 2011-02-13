@@ -278,56 +278,56 @@ module Weibo
       perform_get('/help/test.json')
     end
 
-    # Trends/hourly
-    def trends_hourly(query={})
+  	# Trends/hourly
+  	def trends_hourly(query={})
       perform_get("/trends/hourly.json", :query => query)
-    end
+  	end
 
-    # Trends/daily
-    def trends_daily(query={})
+  	# Trends/daily
+  	def trends_daily(query={})
       perform_get("/trends/daily.json", :query => query)
-    end
+  	end
 
-    # Trends/weekly
-    def trends_weekly(query={})
+  	# Trends/weekly
+  	def trends_weekly(query={})
       perform_get("/trends/weekly.json", :query => query)
-    end
-
-    # Trends/statuses
-    def trends_statuses(trend_name)
-      perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
-    end
-
-    #Trends/follow
-    def trends_follow(trend_name)
-      perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
-    end
+  	end
 	
-    # Tags
-    def tags(query={})
-    	perform_get("/tags.json", :query => query)
-    end
+	  # Trends/statuses
+  	def trends_statuses(trend_name)
+      perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
+  	end
+	
+  	#Trends/follow
+  	def trends_follow(trend_name)
+  	  perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
+  	end
+	
+		# Tags
+		def tags(query={})
+			perform_get("/tags.json", :query => query)
+		end
 
-    # Tags/create
-    # params: tags should be a string split with ","
-    def tags_create(tags)
-    	perform_post("/tags/create.json", :body => {:tags => tags})
-    end
+		# Tags/create
+		# params: tags should be a string split with ","
+		def tags_create(tags)
+			perform_post("/tags/create.json", :body => {:tags => tags})
+		end
+		
+		# Tags/suggestions
+		def tags_suggestions(query={})
+			perform_get("/tags/suggestions.json", :query => query)
+		end
 
-    # Tags/suggestions
-    def tags_suggestions(query={})
-    	perform_get("/tags/suggestions.json", :query => query)
-    end
+		# Tags/destroy
+		def tags_destroy(tag_id)
+			perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
+		end
 
-    # Tags/destroy
-    def tags_destroy(tag_id)
-    	perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
-    end
-
-    # Tags/destroy_batch
-    def tags_destroy_batch(ids)
-    	perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
-    end
+		# Tags/destroy_batch
+		def tags_destroy_batch(ids)
+			perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
+		end
 
   protected
     def self.mime_type(file)
