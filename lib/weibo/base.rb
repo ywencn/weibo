@@ -293,15 +293,15 @@ module Weibo
       perform_get("/trends/weekly.json", :query => query)
   	end
 	
-	# Trends/statuses
+	  # Trends/statuses
   	def trends_statuses(trend_name)
       perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
   	end
 	
-	#Trends/follow
-	def trends_follow(trend_name)
-	perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
-	end
+  	#Trends/follow
+  	def trends_follow(trend_name)
+  	  perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
+  	end
 	
 
 		# Tags
@@ -365,30 +365,30 @@ module Weibo
     end
     def build_multipart_bodies(parts) self.class.build_multipart_bodies(parts) end
 
-    private
-      def perform_get(path, options={})
-        options[:query] = {} unless options[:query]
-        options[:query][:source] = Weibo::Config.api_key
-        Weibo::Request.get(self, path, options)
-      end
+  private
+    def perform_get(path, options={})
+      options[:query] = {} unless options[:query]
+      options[:query][:source] = Weibo::Config.api_key
+      Weibo::Request.get(self, path, options)
+    end
 
-      def perform_post(path, options={})
-        options[:query] = {} unless options[:query]
-        options[:query][:source] = Weibo::Config.api_key
-        Weibo::Request.post(self, path, options)
-      end
+    def perform_post(path, options={})
+      options[:query] = {} unless options[:query]
+      options[:query][:source] = Weibo::Config.api_key
+      Weibo::Request.post(self, path, options)
+    end
 
-      def perform_put(path, options={})
-        options[:query] = {} unless options[:query]
-        options[:query][:source] = Weibo::Config.api_key
+    def perform_put(path, options={})
+      options[:query] = {} unless options[:query]
+      options[:query][:source] = Weibo::Config.api_key
 
-        Weibo::Request.put(self, path, options)
-      end
+      Weibo::Request.put(self, path, options)
+    end
 
-      def perform_delete(path, options={})
-        options[:query] = {} unless options[:query]
-        options[:query][:source] = Weibo::Config.api_key
-        Weibo::Request.delete(self, path, options)
-      end
+    def perform_delete(path, options={})
+      options[:query] = {} unless options[:query]
+      options[:query][:source] = Weibo::Config.api_key
+      Weibo::Request.delete(self, path, options)
+    end
   end
 end
