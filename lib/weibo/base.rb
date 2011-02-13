@@ -297,6 +297,12 @@ module Weibo
   	def trends_statuses(trend_name)
       perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
   	end
+	
+	#Trends/follow
+	def trends_follow(trend_name)
+	perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
+	end
+	
 
 		# Tags
 		def tags(query={})
