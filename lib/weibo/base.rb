@@ -31,8 +31,8 @@ module Weibo
     end
 
     # statuses/public_timeline 最新公共微博
-    def firehose
-      perform_get('/statuses/public_timeline.json')
+    def public_timeline(query = {})
+      perform_get('/statuses/public_timeline.json', :query => query)
     end
 
 
