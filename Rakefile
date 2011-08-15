@@ -2,9 +2,10 @@ require 'rubygems'
 require 'bundler/setup'
 require 'rake'
 require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
 
 desc 'Default: Run the specs'
-task :default => 'spec:unit'
+task :default => ['spec:unit', 'cucumber']
 
 namespace :spec do
   desc 'Run unit specs'
@@ -13,6 +14,11 @@ namespace :spec do
   end
 end
 task :spec => 'spec:unit'
+
+desc 'Cucumber'
+Cucumber::Rake::Task.new(:cucumber) do |t|
+  t.fork = true
+end
 
 begin
   require 'jeweler'
@@ -23,10 +29,16 @@ begin
     gem.email = "ussballantyne@gmail.com"
     gem.homepage = "http://github.com/ballantyne/weibo"
     gem.authors = ["Scott Ballantyne"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_dependency "oauth", "~> 0.4.1"
     gem.add_dependency "hashie"
     gem.add_dependency "httparty", ">= 0.5.2"
+    gem.add_dependency "railties"
+    gem.add_development_dependency "rake"
+    gem.add_development_dependency "rspec"
+    gem.add_development_dependency "cucumber"
+    gem.add_development_dependency "jeweler"
+    gem.add_development_dependency "aruba"
+    gem.add_development_dependency "rails", "3.0.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
