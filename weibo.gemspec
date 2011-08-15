@@ -26,13 +26,18 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "features/load_configurations.feature",
+    "features/step_definitions/rails_steps.rb",
+    "features/support/env.rb",
     "lib/weibo.rb",
     "lib/weibo/base.rb",
     "lib/weibo/config.rb",
     "lib/weibo/httpauth.rb",
     "lib/weibo/oauth.rb",
     "lib/weibo/oauth_hack.rb",
+    "lib/weibo/railtie.rb",
     "lib/weibo/request.rb",
+    "lib/weibo/tasks/weibo.rake",
     "spec/spec_helper.rb",
     "spec/weibo/base_spec.rb",
     "spec/weibo_spec.rb",
@@ -50,72 +55,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<oauth>, [">= 0"])
       s.add_runtime_dependency(%q<hashie>, [">= 0"])
       s.add_runtime_dependency(%q<httparty>, [">= 0"])
-      s.add_runtime_dependency(%q<rake>, [">= 0"])
-      s.add_runtime_dependency(%q<rspec>, ["~> 2.0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_runtime_dependency(%q<guard-rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<growl_notify>, [">= 0"])
-      s.add_runtime_dependency(%q<cucumber>, [">= 0"])
-      s.add_runtime_dependency(%q<aruba>, [">= 0"])
-      s.add_runtime_dependency(%q<rails>, ["= 3.0.9"])
-      s.add_runtime_dependency(%q<oauth>, ["~> 0.4.1"])
-      s.add_runtime_dependency(%q<hashie>, [">= 0"])
-      s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
       s.add_runtime_dependency(%q<railties>, [">= 0"])
-      s.add_development_dependency(%q<rake>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<cucumber>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_development_dependency(%q<aruba>, [">= 0"])
-      s.add_development_dependency(%q<rails>, ["= 3.0.9"])
     else
       s.add_dependency(%q<oauth>, [">= 0"])
       s.add_dependency(%q<hashie>, [">= 0"])
       s.add_dependency(%q<httparty>, [">= 0"])
-      s.add_dependency(%q<rake>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<rb-fsevent>, [">= 0"])
-      s.add_dependency(%q<guard-rspec>, [">= 0"])
-      s.add_dependency(%q<growl_notify>, [">= 0"])
-      s.add_dependency(%q<cucumber>, [">= 0"])
-      s.add_dependency(%q<aruba>, [">= 0"])
-      s.add_dependency(%q<rails>, ["= 3.0.9"])
-      s.add_dependency(%q<oauth>, ["~> 0.4.1"])
-      s.add_dependency(%q<hashie>, [">= 0"])
-      s.add_dependency(%q<httparty>, [">= 0.5.2"])
       s.add_dependency(%q<railties>, [">= 0"])
-      s.add_dependency(%q<rake>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<cucumber>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<aruba>, [">= 0"])
-      s.add_dependency(%q<rails>, ["= 3.0.9"])
     end
   else
     s.add_dependency(%q<oauth>, [">= 0"])
     s.add_dependency(%q<hashie>, [">= 0"])
     s.add_dependency(%q<httparty>, [">= 0"])
-    s.add_dependency(%q<rake>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<rb-fsevent>, [">= 0"])
-    s.add_dependency(%q<guard-rspec>, [">= 0"])
-    s.add_dependency(%q<growl_notify>, [">= 0"])
-    s.add_dependency(%q<cucumber>, [">= 0"])
-    s.add_dependency(%q<aruba>, [">= 0"])
-    s.add_dependency(%q<rails>, ["= 3.0.9"])
-    s.add_dependency(%q<oauth>, ["~> 0.4.1"])
-    s.add_dependency(%q<hashie>, [">= 0"])
-    s.add_dependency(%q<httparty>, [">= 0.5.2"])
     s.add_dependency(%q<railties>, [">= 0"])
-    s.add_dependency(%q<rake>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<cucumber>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<aruba>, [">= 0"])
-    s.add_dependency(%q<rails>, ["= 3.0.9"])
   end
 end
 

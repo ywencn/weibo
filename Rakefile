@@ -33,12 +33,6 @@ begin
     gem.add_dependency "hashie"
     gem.add_dependency "httparty", ">= 0.5.2"
     gem.add_dependency "railties"
-    gem.add_development_dependency "rake"
-    gem.add_development_dependency "rspec"
-    gem.add_development_dependency "cucumber"
-    gem.add_development_dependency "jeweler"
-    gem.add_development_dependency "aruba"
-    gem.add_development_dependency "rails", "3.0.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
