@@ -1,0 +1,46 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    crack (0.1.8)
+    diff-lcs (1.1.2)
+    git (1.2.5)
+    growl_notify (0.0.1)
+      rb-appscript
+    guard (0.6.0)
+      thor (~> 0.14.6)
+    guard-rspec (0.4.1)
+      guard (>= 0.4.0)
+    hashie (1.1.0)
+    httparty (0.7.8)
+      crack (= 0.1.8)
+    jeweler (1.6.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+    oauth (0.4.5)
+    rake (0.9.2)
+    rb-appscript (0.6.1)
+    rb-fsevent (0.4.3)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+    thor (0.14.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  growl_notify
+  guard-rspec
+  hashie
+  httparty
+  jeweler
+  oauth
+  rake
+  rb-fsevent
+  rspec (~> 2.0)

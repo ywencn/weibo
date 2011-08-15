@@ -1,13 +1,7 @@
 require 'forwardable'
 require 'rubygems'
-
-gem 'oauth', '~> 0.4.1'
 require 'oauth'
-
-gem 'hashie'
 require 'hashie'
-
-gem 'httparty', '>= 0.5.2'
 require 'httparty'
 
 module Weibo
@@ -60,5 +54,5 @@ require File.join(directory, 'weibo', 'base')
 # code is an adaptation of the twitter gem by John Nunemaker
 # http://github.com/jnunemaker/twitter
 # Copyright (c) 2009 John Nunemaker
-# 
+#
 # made to work with china's leading twitter service, 新浪微博
