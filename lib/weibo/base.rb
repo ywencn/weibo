@@ -298,8 +298,10 @@ module Weibo
     end
 
     # Trends/statuses
-    def trends_statuses(trend_name)
-      perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
+    def trends_statuses(trend_name, query={})
+      body = {:trend_name => trend_name}
+      body.merge!(query)
+      perform_post("/trends/statuses.json", :body => body)
     end
 
     #Trends/follow
