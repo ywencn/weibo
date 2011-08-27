@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 module Weibo
   class Base
     extend Forwardable
@@ -333,6 +334,12 @@ module Weibo
 		def tags_destroy_batch(ids)
 			perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
 		end
+
+    # Emotions
+    # List of emotions
+    def emotions(query={})
+      perform_get("/emotions.json", :query => query)
+    end
 
   protected
     def self.mime_type(file)
