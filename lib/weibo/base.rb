@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+require 'uri'
+
 module Weibo
   class Base
     extend Forwardable
@@ -309,38 +311,44 @@ module Weibo
   	  perform_delete("/trends/destroy.json", :query => {:trend_id => trend_id})
   	end
 	
-		# Tags
-		def tags(query={})
-			perform_get("/tags.json", :query => query)
-		end
+	# Tags
+	def tags(query={})
+		perform_get("/tags.json", :query => query)
+	end
 
-		# Tags/create
-		# params: tags should be a string split with ","
-		def tags_create(tags)
-			perform_post("/tags/create.json", :body => {:tags => tags})
-		end
-		
-		# Tags/suggestions
-		def tags_suggestions(query={})
-			perform_get("/tags/suggestions.json", :query => query)
-		end
+	# Tags/create
+	# params: tags should be a string split with ","
+	def tags_create(tags)
+		perform_post("/tags/create.json", :body => {:tags => tags})
+	end
+	
+	# Tags/suggestions
+	def tags_suggestions(query={})
+		perform_get("/tags/suggestions.json", :query => query)
+	end
 
-		# Tags/destroy
-		def tags_destroy(tag_id)
-			perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
-		end
+	# Tags/destroy
+	def tags_destroy(tag_id)
+		perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
+	end
 
-		# Tags/destroy_batch
-		def tags_destroy_batch(ids)
-			perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
-		end
+	# Tags/destroy_batch
+	def tags_destroy_batch(ids)
+		perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
+	end
 
     # Emotions
     # List of emotions
     def emotions(query={})
       perform_get("/emotions.json", :query => query)
     end
-
+    
+    #location
+    #option: q(station name),city,page,count
+    def station(q,city='0010',page=1,count=10)
+        perform_get('/location/bus/station.json', :query => {'q' => URI.encode(q),'city' => city,'page' => page, 'count' => count})
+    end
+        
   protected
     def self.mime_type(file)
       case
