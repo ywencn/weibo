@@ -31,6 +31,7 @@ This gem was made in the process of creating {叽叽喳喳.de}[http://jjzz.de], 
 * {numbcoder}[https://github.com/numbcoder]
 * {xiuxiu}[https://github.com/xiuxiu]
 * {jerrydeng}[https://github.com/jerrydeng]
+* {dongyuwei}[https://github.com/dongyuwei]
 
 == Note on Patches/Pull Requests
  
