@@ -2,6 +2,7 @@ source "http://rubygems.org"
 gem "oauth"
 gem "hashie"
 gem "httparty"
+gem 'crack'
 
 # For Development
 gem "rake"
