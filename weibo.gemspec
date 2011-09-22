@@ -68,7 +68,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<oauth>, ["~> 0.4.1"])
       s.add_runtime_dependency(%q<hashie>, [">= 0"])
       s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
-      s.add_runtime_dependency(%q<railties>, [">= 0"])
     else
       s.add_dependency(%q<oauth>, [">= 0"])
       s.add_dependency(%q<hashie>, [">= 0"])
@@ -85,7 +84,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<oauth>, ["~> 0.4.1"])
       s.add_dependency(%q<hashie>, [">= 0"])
       s.add_dependency(%q<httparty>, [">= 0.5.2"])
-      s.add_dependency(%q<railties>, [">= 0"])
     end
   else
     s.add_dependency(%q<oauth>, [">= 0"])
@@ -103,7 +101,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<oauth>, ["~> 0.4.1"])
     s.add_dependency(%q<hashie>, [">= 0"])
     s.add_dependency(%q<httparty>, [">= 0.5.2"])
-    s.add_dependency(%q<railties>, [">= 0"])
   end
 end
 
