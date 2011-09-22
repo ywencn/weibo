@@ -1,7 +1,7 @@
 development:
   api_key: api_key
   api_secret: api_secret
-test:
+test``:
   api_key: api_key
   api_secret: api_secret
 production:
