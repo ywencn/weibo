@@ -343,7 +343,6 @@ module Weibo
       perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
     end
 
->>>>>>> a24ecba2f32e7f611e29d4ac2414f18b8e56cdb0
   protected
     def self.mime_type(file)
       case
