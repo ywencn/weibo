@@ -63,7 +63,6 @@ PLATFORMS
 
 DEPENDENCIES
   aruba
-  builder (= 3.0.0)
   cucumber
   growl_notify
   guard-cucumber

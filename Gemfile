@@ -7,7 +7,6 @@ gem "httparty"
 gem "rake"
 gem "rspec", "~> 2.0"
 gem "cucumber"
-gem 'builder', "3.0.0"
 gem "aruba"
 
 # For Gem release
