@@ -60,6 +60,8 @@ if File.exists?('config/weibo.yml')
   weibo_oauth = YAML.load_file('config/weibo.yml')[Rails.env || env || 'development']
   Weibo::Config.api_key = weibo_oauth["api_key"]
   Weibo::Config.api_secret = weibo_oauth["api_secret"]
+else 
+  puts "you haven't made a config/weibo.yml file.  you should.  the weibo gem will work much better if you do"
 end
 
 begin

@@ -1,3 +1,4 @@
+require 'crack'
 module Weibo
   class Request
     extend Forwardable
