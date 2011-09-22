@@ -9,7 +9,7 @@ require 'rubygems'
 require 'oauth'
 require 'hashie'
 require 'httparty'
-require 'rails'
+
 
 require 'weibo/oauth'
 require 'weibo/oauth_hack'
@@ -17,7 +17,7 @@ require 'weibo/httpauth'
 require 'weibo/request'
 require 'weibo/config'
 require 'weibo/base'
-require 'weibo/railtie'
+
 
 module Weibo
   class WeiboError < StandardError
@@ -52,4 +52,19 @@ module Hashie
       self
     end
   end
+end
+
+
+
+if File.exists?('config/weibo.yml')
+  weibo_oauth = YAML.load_file('config/weibo.yml')[Rails.env || env || 'development']
+  Weibo::Config.api_key = weibo_oauth["api_key"]
+  Weibo::Config.api_secret = weibo_oauth["api_secret"]
+end
+
+begin
+if Rails
+  require 'weibo/railtie'
+end
+rescue
 end
