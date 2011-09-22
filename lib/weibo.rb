@@ -1,14 +1,23 @@
+# code is an adaptation of the twitter gem by John Nunemaker
+# http://github.com/jnunemaker/twitter
+# Copyright (c) 2009 John Nunemaker
+#
+# made to work with china's leading twitter service, 新浪微博
+
 require 'forwardable'
 require 'rubygems'
-
-gem 'oauth', '~> 0.4.1'
 require 'oauth'
-
-gem 'hashie'
 require 'hashie'
-
-gem 'httparty', '>= 0.5.2'
 require 'httparty'
+require 'rails'
+
+require 'weibo/oauth'
+require 'weibo/oauth_hack'
+require 'weibo/httpauth'
+require 'weibo/request'
+require 'weibo/config'
+require 'weibo/base'
+require 'weibo/railtie'
 
 module Weibo
   class WeiboError < StandardError
@@ -16,7 +25,6 @@ module Weibo
 
     def initialize(data)
       @data = data
-
       super
     end
   end
@@ -32,7 +40,6 @@ end
 
 module Hashie
   class Mash
-
     # Converts all of the keys to strings, optionally formatting key name
     def rubyify_keys!
       keys.each{|k|
@@ -44,21 +51,5 @@ module Hashie
       }
       self
     end
-
   end
 end
-
-directory = File.expand_path(File.dirname(__FILE__))
-
-require File.join(directory, 'weibo', 'oauth')
-require File.join(directory, 'weibo', 'oauth_hack')
-require File.join(directory, 'weibo', 'httpauth')
-require File.join(directory, 'weibo', 'request')
-require File.join(directory, 'weibo', 'config')
-require File.join(directory, 'weibo', 'base')
-
-# code is an adaptation of the twitter gem by John Nunemaker
-# http://github.com/jnunemaker/twitter
-# Copyright (c) 2009 John Nunemaker
-# 
-# made to work with china's leading twitter service, 新浪微博

@@ -61,7 +61,7 @@ module Weibo
     def status(id)
       perform_get("/statuses/show/#{id}.json")
     end
-    
+
     def counts(query={})
       perform_get("/statuses/counts.json", :query => query)
     end
@@ -110,7 +110,7 @@ module Weibo
     def unread
       perform_get('/statuses/unread.json')
     end
-    
+
     # statuses/reset_count  未读消息数清零
     def reset_count(query={})
       perform_get('/statuses/reset_count.json', :query => query)
@@ -124,11 +124,11 @@ module Weibo
       perform_get('/statuses/comments_by_me.json', :query => query)
     end
 
-		# statuses/comments_to_me  当前用户收到的评论
+    # statuses/comments_to_me  当前用户收到的评论
     def comments_to_me(query={})
       perform_get('/statuses/comments_to_me.json', :query => query)
     end
-		
+
     def comments(query={})
       perform_get('/statuses/comments.json', :query => query)
     end
@@ -281,74 +281,69 @@ module Weibo
       perform_get('/help/test.json')
     end
 
-  	# Trends/hourly
-  	def trends_hourly(query={})
+    def trends(query = {})
+      perform_get("/trends.json", :query => query)
+    end
+
+    # Trends/hourly
+    def trends_hourly(query={})
       perform_get("/trends/hourly.json", :query => query)
-  	end
+    end
 
-  	# Trends/daily
-  	def trends_daily(query={})
+    # Trends/daily
+    def trends_daily(query={})
       perform_get("/trends/daily.json", :query => query)
-  	end
+    end
 
-  	# Trends/weekly
-  	def trends_weekly(query={})
+    # Trends/weekly
+    def trends_weekly(query={})
       perform_get("/trends/weekly.json", :query => query)
-  	end
-	
-	  # Trends/statuses
-  	def trends_statuses(trend_name)
-      perform_post("/trends/statuses.json", :body => {:trend_name => trend_name})
-  	end
-	
-  	#Trends/follow
-  	def trends_follow(trend_name)
-  	  perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
-  	end
-	
-  	#Trends/destroy
-  	def trends_destroy(trend_id)
-  	  perform_delete("/trends/destroy.json", :query => {:trend_id => trend_id})
-  	end
-	
-	# Tags
-	def tags(query={})
-		perform_get("/tags.json", :query => query)
-	end
-
-	# Tags/create
-	# params: tags should be a string split with ","
-	def tags_create(tags)
-		perform_post("/tags/create.json", :body => {:tags => tags})
-	end
-	
-	# Tags/suggestions
-	def tags_suggestions(query={})
-		perform_get("/tags/suggestions.json", :query => query)
-	end
-
-	# Tags/destroy
-	def tags_destroy(tag_id)
-		perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
-	end
-
-	# Tags/destroy_batch
-	def tags_destroy_batch(ids)
-		perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
-	end
-
-    # Emotions
-    # List of emotions
-    def emotions(query={})
-      perform_get("/emotions.json", :query => query)
     end
-    
-    #location
-    #option: q(station name),city,page,count
-    def station(q,city='0010',page=1,count=10)
-        perform_get('/location/bus/station.json', :query => {'q' => URI.encode(q),'city' => city,'page' => page, 'count' => count})
+
+    # Trends/statuses
+    def trends_statuses(trend_name, query={})
+      body = {:trend_name => trend_name}
+      body.merge!(query)
+      perform_post("/trends/statuses.json", :body => body)
     end
-        
+
+    #Trends/follow
+    def trends_follow(trend_name)
+      perform_post("/trends/follow.json", :body => {:trend_name => trend_name})
+    end
+
+    #Trends/destroy
+    def trends_destroy(trend_id)
+      perform_delete("/trends/destroy.json", :query => {:trend_id => trend_id})
+    end
+
+    # Tags
+    def tags(query={})
+      perform_get("/tags.json", :query => query)
+    end
+
+    # Tags/create
+    # params: tags should be a string split with ","
+    def tags_create(tags)
+      perform_post("/tags/create.json", :body => {:tags => tags})
+    end
+
+    # Tags/suggestions
+    def tags_suggestions(query={})
+      perform_get("/tags/suggestions.json", :query => query)
+    end
+
+    # Tags/destroy
+    def tags_destroy(tag_id)
+      perform_delete("/tags/destroy.json", :body => {:tag_id => tag_id})
+    end
+
+    # Tags/destroy_batch
+    def tags_destroy_batch(ids)
+      perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
+    end
+
+>>>>>>> a24ecba2f32e7f611e29d4ac2414f18b8e56cdb0
   protected
     def self.mime_type(file)
       case
