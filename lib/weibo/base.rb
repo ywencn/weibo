@@ -343,6 +343,12 @@ module Weibo
       perform_delete("/tags/destroy_batch.json", :body => {:ids => ids})
     end
 
+    # Emotions
+    # List of emotions
+    def emotions(query={})
+      perform_get("/emotions.json", :query => query)
+    end    
+    
   protected
     def self.mime_type(file)
       case
